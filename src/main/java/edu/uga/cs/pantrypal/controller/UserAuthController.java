@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "*") // Allow frontend to access this
+@CrossOrigin(origins = "https://brenna-hehir.github.io", allowCredentials = "true")
 public class UserAuthController {
 
     public UserAuthController() {
