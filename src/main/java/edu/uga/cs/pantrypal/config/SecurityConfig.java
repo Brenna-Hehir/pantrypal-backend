@@ -37,7 +37,7 @@ public class SecurityConfig {
                         "http://localhost:3000",
                         "https://brenna-hehir.github.io"
                     )
-                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
         }
     };
 }
