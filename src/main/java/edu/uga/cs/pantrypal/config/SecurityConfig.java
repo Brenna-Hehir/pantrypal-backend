@@ -37,8 +37,8 @@ public class SecurityConfig {
                         "https://brenna-hehir.github.io"
                     )
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                    .allowedHeaders("*"); // safe to include here
-\            }
+                    .allowedHeaders("*");
+            }
         };
     }
 }
