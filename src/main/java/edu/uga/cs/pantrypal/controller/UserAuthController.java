@@ -23,17 +23,18 @@ public class UserAuthController {
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @PostMapping("/signup")
-    public String registerUser(@RequestBody User user) {
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            return "Username already taken";
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already taken");
         }
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
-            return "Email already in use";
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email already in use");
         }
         user.setPasswordHash(passwordEncoder.encode(user.getPasswordHash()));
         userRepository.save(user);
-        return "Registration successful";
+        return ResponseEntity.ok("Registration successful");
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User loginData) {
