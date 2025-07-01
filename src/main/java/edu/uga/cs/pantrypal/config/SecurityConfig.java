@@ -8,6 +8,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@CrossOrigin(origins = "https://brenna-hehir.github.io", allowCredentials = "true")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -33,9 +34,14 @@ public class SecurityConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:3000") // frontend origin
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
-            }
-        };
-    }
+                    .allowedOrigins(
+                        "http://localhost:3000",
+                        "https://brenna-hehir.github.io"
+                    )
+                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                    .allowCredentials(true);
+        }
+    };
+}
+
 }
