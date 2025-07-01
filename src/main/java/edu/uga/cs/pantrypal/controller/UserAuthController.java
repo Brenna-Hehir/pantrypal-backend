@@ -17,6 +17,10 @@ import java.util.Optional;
 @CrossOrigin(origins = "*") // Allow frontend to access this
 public class UserAuthController {
 
+    public UserAuthController() {
+        System.out.println("UserAuthController has been loaded!");
+    }
+
     @Autowired
     private UserRepository userRepository;
 
