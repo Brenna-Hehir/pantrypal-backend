@@ -10,7 +10,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/saved")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://brenna-hehir.github.io", allowCredentials = "true")
 public class SavedRecipeController {
 
     @Autowired

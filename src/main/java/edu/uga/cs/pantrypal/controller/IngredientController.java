@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ingredients")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://brenna-hehir.github.io", allowCredentials = "true")
 public class IngredientController {
 
     @Autowired

@@ -10,7 +10,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/comments")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://brenna-hehir.github.io", allowCredentials = "true")
 public class CommentController {
 
     @Autowired
